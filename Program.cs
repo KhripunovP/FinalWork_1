@@ -14,6 +14,21 @@ int SizeOfShortArray(string[] array)
     return shortElements;
 }
 
+string[] ShortArray(string[] array, int size)
+{
+    int a = 0;
+    string[] shortArray = new string[size];
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            shortArray[a] = array[i];
+            a = a + 1;
+        }
+    }
+    return shortArray;
+}
+
 void PrintArray(string[] array)
 {
     Console.Write("[");
@@ -32,3 +47,8 @@ string[] str = Console.ReadLine().Split(',');
 Console.WriteLine("Начальный массив");
 PrintArray(str);
 
+int num = SizeOfShortArray(str);
+string[] shortStr = ShortArray(str, num);
+
+Console.WriteLine("Итоговый массив");
+PrintArray(shortStr);
