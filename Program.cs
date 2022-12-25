@@ -3,6 +3,17 @@
 // либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями, 
 // лучше обойтись исключительно массивами.
 
+int SizeOfShortArray(string[] array)
+{
+    int shortElements = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+            shortElements = shortElements + 1;
+    }
+    return shortElements;
+}
+
 void PrintArray(string[] array)
 {
     Console.Write("[");
